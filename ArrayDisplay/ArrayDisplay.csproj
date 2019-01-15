@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{80A0890A-9E11-4FC1-90E4-DFB54BD6FAD2}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ArrayLoopLibrary</RootNamespace>
-    <AssemblyName>ArrayLoopLibrary</AssemblyName>
+    <ProjectGuid>{98DED777-F0FC-409B-A532-8A617354E8A5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ArrayDisplay</RootNamespace>
+    <AssemblyName>ArrayDisplay</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddingArrayValues.cs" />
-    <Compile Include="ArrayLoop.cs" />
-    <Compile Include="BasicArray.cs" />
-    <Compile Include="CleanAddingArrayValues.cs" />
-    <Compile Include="CleanArrayLoop.cs" />
-    <Compile Include="CleanBasicArray.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArrayLoopLibrary\ArrayLoopLibrary.csproj">
+      <Project>{80a0890a-9e11-4fc1-90e4-dfb54bd6fad2}</Project>
+      <Name>ArrayLoopLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
